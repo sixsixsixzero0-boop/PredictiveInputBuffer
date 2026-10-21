@@ -127,8 +127,8 @@ class $modify(PredictiveInputBufferGame, GJBaseGameLayer) {
         }
     }
 
-    void processCommands(float dt) {
-        tickCounter++;
+        void processCommands(float dt, bool isHalfTick, bool isLastTick) {
+        if (!isHalfTick) tickCounter++;
         int limit = currentLimit();
 
         for (int i = 0; i < 2; i++) {
@@ -174,7 +174,7 @@ class $modify(PredictiveInputBufferGame, GJBaseGameLayer) {
             }
         }
 
-        GJBaseGameLayer::processCommands(dt);
+        GJBaseGameLayer::processCommands(dt, isHalfTick, isLastTick);
     }
 };
 
