@@ -21,3 +21,9 @@ jobs:
           target: Win64
           use-lto: false
           use-cpm-cache: false
+          
+      - name: Upload mod
+        uses: actions/upload-artifact@v4
+        with:
+          name: geode-mod
+          path: ./build/*.geode
